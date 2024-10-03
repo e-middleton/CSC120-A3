@@ -112,10 +112,15 @@ public class Conversation {
         response[i] = words[i];
       }
     }
-      return response;
-    }
+    return response;
+  }
 
 
+/**
+ * Main function, which is where the conversation is begun and carried out in a for loop, 
+ * it creates an array to store the transcript and outputs it after the conversation
+ * @param arguments
+ */
   public static void main(String[] arguments) {
     //initializes conversation so I can use it's methods
     Conversation myConvo = new Conversation();
@@ -126,7 +131,6 @@ public class Conversation {
     //declares a Scanner named input and uses it to get number of lines
     Scanner input = new Scanner(System.in);
     String line;
-    String collection = "";
     int counter = 2;
 
 
@@ -152,6 +156,7 @@ public class Conversation {
       counter += 1;
 
       if(myConvo.checker(myConvo.sliceAndDice(line))){ //checks for mirror word existence
+        String collection = ""; //to collect the edited string for the transcript
         String[] words = myConvo.swipSwap(myConvo.sliceAndDice(line)); //swaps mirror words out
         for(int j = 0; j<(words.length); j++){
           //transcript += (words[j] + " "); //concatenates these words into the transcript
