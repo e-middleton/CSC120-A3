@@ -9,6 +9,7 @@ public class Conversation {
 //can't change internal stuff, that would be bad
   private String[] mirrorWords;
   private String[] replacementWords;
+  private String[] cannedResponses;
   
 
   /**
@@ -17,6 +18,7 @@ public class Conversation {
   public Conversation() {
     this.mirrorWords = new String[6];
     this.replacementWords = new String[6];
+    this.cannedResponses = new String[5];
 
     this.mirrorWords[0] = "i"; 
     this.mirrorWords[1] = "me";
@@ -31,23 +33,22 @@ public class Conversation {
     this.replacementWords[3] = "i";
     this.replacementWords[4] = "your";
     this.replacementWords[5] = "my";
+
+    this.cannedResponses[0] = "huh, thats neat I guess.";
+    this.cannedResponses[1] = "I believe you buddy.";
+    this.cannedResponses[2] = "Woah, radical dude.";
+    this.cannedResponses[3] = "mmhmm";
+    this.cannedResponses[4] = "Absolutely stupendous thoughts you have.";
   }
   
 
   /**
-   * Generates a canned response based on an int 
+   * Grabs a canned response from the array based on an integer 
    * @param index the index number of the array of responses, should be random
    * @return String: it gives back one of the strings in the array
    */
   public String randoThought(int index) {
-    String[] cannedResponses = new String[5];
-    cannedResponses[0] = "huh, thats neat I guess.";
-    cannedResponses[1] = "I believe you buddy.";
-    cannedResponses[2] = "Woah, radical dude.";
-    cannedResponses[3] = "mmhmm";
-    cannedResponses[4] = "Absolutely stupendous thoughts you have.";
-
-    return cannedResponses[index];
+    return this.cannedResponses[index];
   }
 
   /**
@@ -156,7 +157,7 @@ public class Conversation {
       counter += 1;
 
       if(myConvo.checker(myConvo.sliceAndDice(line))){ //checks for mirror word existence
-        String collection = ""; //to collect the edited string for the transcript
+        String collection = ""; //to collect the edited string for the transcript, hopefully declaring it in the loop keeps it cleared out
         String[] words = myConvo.swipSwap(myConvo.sliceAndDice(line)); //swaps mirror words out
         for(int j = 0; j<(words.length); j++){
           //transcript += (words[j] + " "); //concatenates these words into the transcript

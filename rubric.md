@@ -30,7 +30,7 @@ __YES__ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercas
 
 ### Level 3 (3 pts)
 
-___PART__ 1 pt: Makes all appropriate mirror replacements
+___YES__ 1 pt: Makes all appropriate mirror replacements
 
 __YES__ 1 pt: Stores transcript of the conversation in an array
 
@@ -64,6 +64,6 @@ ___YES__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       ___YES__ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
+___YES__ 1 pt: All required files included with submission (including completed checklist file)
 
 __YES___ 1 pt: `reflection.md` contains your reflection on the assignment
